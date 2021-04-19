@@ -279,7 +279,6 @@ You can download the PDF and Epub version of this repository from the latest run
 |248| [What is the browser support for react applications?](#what-is-the-browser-support-for-react-applications)|
 |249| [What is the purpose of unmountComponentAtNode method?](#what-is-the-purpose-of-unmountcomponentatnode-method)|
 |250| [What is code-splitting?](#what-is-code-splitting)|
-|251| [What is the benefit of strict mode?](#what-is-the-benefit-of-strict-mode)|
 |252| [What are Keyed Fragments?](#what-are-keyed-fragments)|
 |253| [Does React support all HTML attributes?](#does-react-support-all-html-attributes)|
 |254| [What are the limitations with HOCs?](#what-are-the-limitations-with-hocs)|
@@ -498,7 +497,9 @@ You can download the PDF and Epub version of this repository from the latest run
     
 8. ### What is state in React?
 
-    *State* of a component is an object that holds some information that may change over the lifetime of the component. We should always try to make our state as simple as possible and minimize the number of stateful components.
+    *State* of a component is an object that holds some information that may change over the lifetime of the component. 
+    State is similar to props, but it is private and fully controlled by the component. i.e, It is not accessible to any component other than the one that owns and sets it.
+    We should always try to make our state as simple as possible and minimize the number of stateful components.
 
     Let's create an user component with message state,
 
@@ -525,7 +526,6 @@ You can download the PDF and Epub version of this repository from the latest run
 
     ![state](images/state.jpg)
 
-    State is similar to props, but it is private and fully controlled by the component. i.e, It is not accessible to any component other than the one that owns and sets it.
 
 
    **[⬆ Back to Top](#table-of-contents)**
@@ -818,7 +818,7 @@ You can download the PDF and Epub version of this repository from the latest run
     
 21. ### What are forward refs?
 
-    *Ref forwarding* is a feature that lets some components take a *ref* they receive, and pass it further down to a child.
+    *Ref forwarding* is a technique for passing a ref through a component to one of its children.
 
     ```jsx harmony
     const ButtonElement = React.forwardRef((props, ref) => (
@@ -935,14 +935,7 @@ You can download the PDF and Epub version of this repository from the latest run
     
 27. ### What is React Fiber?
 
-    Fiber is the new *reconciliation* engine or reimplementation of core algorithm in React v16. The goal of React Fiber is to increase its suitability for areas like animation, layout, gestures, ability to pause, abort, or reuse work and assign priority to different types of updates; and new concurrency primitives.
-
-
-   **[⬆ Back to Top](#table-of-contents)**
-    
-28. ### What is the main goal of React Fiber?
-
-    The goal of *React Fiber* is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is **incremental rendering**: the ability to split rendering work into chunks and spread it out over multiple frames.
+    Fiber is the new *reconciliation* engine or reimplementation of core algorithm in React v16. The goal of *React Fiber* is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is **incremental rendering**: the ability to split rendering work into chunks and spread it out over multiple frames.
 
 
    **[⬆ Back to Top](#table-of-contents)**
@@ -2109,6 +2102,14 @@ You can download the PDF and Epub version of this repository from the latest run
 83. ### What is strict mode in React?
 
     `React.StrictMode` is a useful component for highlighting potential problems in an application. Just like `<Fragment>`, `<StrictMode>` does not render any extra DOM elements. It activates additional checks and warnings for its descendants. These checks apply for *development mode* only.
+
+    The <StrictMode> will be  helpful in the below cases
+
+     1. Identifying components with **unsafe lifecycle methods**.
+     2. Warning about **legacy string ref** API usage.
+     3. Detecting unexpected **side effects**.
+     4. Detecting **legacy context** API.
+     5. Warning about deprecated findDOMNode usage
 
     ```jsx harmony
     import React from 'react'
@@ -5273,16 +5274,6 @@ You can download the PDF and Epub version of this repository from the latest run
 
    **[⬆ Back to Top](#table-of-contents)**
     
-251. ### What is the benefit of strict mode?
-     The <StrictMode> will be  helpful in the below cases
-
-     1. Identifying components with **unsafe lifecycle methods**.
-     2. Warning about **legacy string ref** API usage.
-     3. Detecting unexpected **side effects**.
-     4. Detecting **legacy context** API.
-     5. Warning about deprecated findDOMNode usage
-
-   **[⬆ Back to Top](#table-of-contents)**
     
 252. ### What are Keyed Fragments?
      The Fragments declared with the explicit <React.Fragment> syntax may have keys. The general use case is mapping a collection to an array of fragments as below,
