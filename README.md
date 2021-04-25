@@ -361,6 +361,16 @@ You can download the PDF and Epub version of this repository from the latest run
 ## Core React
 
 
+0. ### What is web pack?
+
+    webpack is a module bundler and has a broader definition of what a module is, specifically, for webpack, modules are:
+    *ES modules
+    *CSS import
+    *image url
+
+    *That is, webpack is able to call dependencies from any of these sources.
+    
+    *The ultimate goal of webpack is to unify all these different sources and module types in a way that's possible to import everything in your JavaScript code, and finally produce a shippable output.
     
 1. ### What is React?
 
